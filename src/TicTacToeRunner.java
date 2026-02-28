@@ -1,5 +1,5 @@
 public class TicTacToeRunner {
     public static void main(String[] args) {
-        TicTacToeFrame test = new TicTacToeFrame();
+        TicTacToeFrame frame = new TicTacToeFrame();
     }
 }

@@ -274,8 +274,8 @@ public class TicTacToeFrame extends JFrame {
     }
 
     public class TicTacToeTile extends JButton {
-        private int row;
-        private int col;
+        private final int row;
+        private final int col;
         public TicTacToeTile(int row, int col) {
             super();
             this.row = row;
