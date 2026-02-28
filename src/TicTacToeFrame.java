@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 public class TicTacToeFrame extends JFrame {
     private final int ROWS = 3;
     private final int COLS = 3;
-    private final JButton[][] boardButtons = new JButton [3][3];
+    private final TicTacToeTile[][] boardButtons = new TicTacToeTile[3][3];
 
     JPanel mainPnl;
     JPanel boardPnl;
@@ -98,7 +98,8 @@ public class TicTacToeFrame extends JFrame {
         int col;
         for (row = 0; row < ROWS; row++) {
             for (col = 0; col < boardButtons[row].length; col++) {
-                boardButtons[row][col] = new JButton(" ");
+                boardButtons[row][col] = new TicTacToeTile(row, col);
+                boardButtons[row][col].setText(" ");
                 boardButtons[row][col].setSize(2, 3);
                 boardButtons[row][col].addActionListener((ActionEvent actionEvent) -> {
                     move++;
@@ -270,5 +271,21 @@ public class TicTacToeFrame extends JFrame {
         }
 // Checked every vector so I know I have a tie
         return true;
+    }
+
+    public class TicTacToeTile extends JButton {
+        private int row;
+        private int col;
+        public TicTacToeTile(int row, int col) {
+            super();
+            this.row = row;
+            this.col = col;
+        }
+        public int getRow() {
+            return row;
+        }
+        public int getCol() {
+            return col;
+        }
     }
 }
